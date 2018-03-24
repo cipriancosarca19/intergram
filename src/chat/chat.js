@@ -39,9 +39,7 @@ export default class Chat extends Component {
 
                 <input class="textarea" type="text" placeholder={this.props.conf.placeholderText}
                        ref={(input) => { this.input = input }}
-                       onKeyPress={this.handleKeyPress}/><button class="textarea" type="submit" onKeyPress={let text = this.input.value;
-            this.socket.send({text, from: 'visitor', visitorName: this.props.conf.visitorName});
-            this.input.value = '';}>Trimite</button>
+                       onKeyPress={this.handleKeyPress}/><button class="textarea" type="submit" onKeyPress={this.handlePress}>Trimite</button>
 
                 <a class="banner" href="" target="_blank">
                     Powered by <b>nexSOFT</b>&nbsp;
@@ -50,6 +48,9 @@ export default class Chat extends Component {
         );
     }
 
+    handlePress => {  let text = this.input.value;
+            this.socket.send({text, from: 'visitor', visitorName: this.props.conf.visitorName});
+            this.input.value = ''; };
     handleKeyPress = (e) => {
         if (e.keyCode == 13 && this.input.value) {
             let text = this.input.value;
