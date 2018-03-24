@@ -39,7 +39,7 @@ export default class Chat extends Component {
 
                 <input class="textarea" type="text" placeholder={this.props.conf.placeholderText}
                        ref={(input) => { this.input = input }}
-                       onKeyPress={this.handleKeyPress}/>
+                       onKeyPress={this.handleKeyPress}/><button class="textarea" type="submit">Trimite</button>
 
                 <a class="banner" href="" target="_blank">
                     Powered by <b>nexSOFT</b>&nbsp;
