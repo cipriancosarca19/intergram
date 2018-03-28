@@ -48,7 +48,7 @@ export default class Chat extends Component {
         );
     }
 
-    handlePress => {  let text = this.input.value;
+    handlePress = (e) => {  let text = this.input.value;
             this.socket.send({text, from: 'visitor', visitorName: this.props.conf.visitorName});
             this.input.value = ''; };
     handleKeyPress = (e) => {
